@@ -9,14 +9,12 @@ var todoButton = document.querySelector('.todo-button');
 // console.log(todoList);
 // console.log(todoInput);
 // console.log(todoButton);
-var todoForm = document.forms[0];
-console.log(todoForm);
 
 
 // Add EventListeners 
 
 todoButton.addEventListener('click', addTodo);
-
+todoList.addEventListener('click', deleteList);
 
 
 
@@ -68,7 +66,24 @@ todoList.appendChild(todoDiv);
 
 todoInput.value = " ";
 
+ }
 
+ function deleteList(e){
+     
+//    const item = e.target.parentElement;
+//  console.log(item);
+//    console.log(item.parentNode);
+//    item.parentNode.removeChild(item);
 
-
-     }
+// another logic  for delete
+const item = e.target;
+console.log(item);
+// Delete TODO
+if(item.classList[0] === "trash-btn") {
+    // console.log(typeof item.classList[0]);
+    const todo = item.parentElement;
+    // console.log(todo);
+    todo.remove();
+}
+    
+ }

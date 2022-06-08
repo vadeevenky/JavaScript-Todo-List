@@ -77,7 +77,13 @@ form input, form button{
 
  .complete-btn{
      background: #74b61f;
+     
  }
  .trash-btn{
     background: #cf321d;
+    
  }
+ .fa-trash, .fa-check {
+     pointer-events: none;
+ }
+ 
