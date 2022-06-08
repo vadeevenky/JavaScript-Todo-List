@@ -1,0 +1,74 @@
+
+// getting class or creating variables
+// selectors
+
+var todoList = document.querySelector('.todo-list');
+var todoInput = document.querySelector('.todo-input');
+var todoButton = document.querySelector('.todo-button');
+
+// console.log(todoList);
+// console.log(todoInput);
+// console.log(todoButton);
+var todoForm = document.forms[0];
+console.log(todoForm);
+
+
+// Add EventListeners 
+
+todoButton.addEventListener('click', addTodo);
+
+
+
+
+// Functions 
+
+function addTodo(event){
+    // console.log("clicked from the button");
+
+    // prevent default behaviour
+      event.preventDefault();
+
+    
+ 
+
+    // const  value = todoForm.querySelector(input[type ='text']).value;
+
+
+    // creating Elements (div,li,button,)
+       
+    const todoDiv = document.createElement('div');
+      todoDiv.classList.add('todo');
+    // create li
+    const todoLi = document.createElement('li');
+    todoLi.classList.add('todo-item');
+    todoLi.textContent = todoInput.value;
+
+      // append the elements
+    todoDiv.appendChild(todoLi);
+    
+
+    //creating  CHECK Mark button
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML ='<i class="fas fa-check"></i>';
+    // add className  check mark button
+    completedButton.classList.add("complete-btn");
+      
+    // append completedButton
+    todoDiv.appendChild(completedButton);
+
+    //create  trash button
+const trashButton = document.createElement('button');
+trashButton.innerHTML = '<i class="fas fa-trash"></i>';
+trashButton.classList.add("trash-btn");
+ 
+todoDiv.appendChild(trashButton);
+    
+todoList.appendChild(todoDiv);
+
+
+todoInput.value = " ";
+
+
+
+
+     }
